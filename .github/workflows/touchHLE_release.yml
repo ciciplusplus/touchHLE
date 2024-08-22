@@ -68,6 +68,8 @@ jobs:
     - if: ${{ steps.cache-android-ndk.outputs.cache-hit != 'true' }}
       name: Extract Android NDK
       run: 7z -o/usr/local/lib/android/sdk/ndk/25.2.9519653 x android-ndk-r25c-linux.zip
+    - name: Test 3
+      run: ls -la /usr/local/lib/android/sdk/ndk/25.2.9519653
     # Why isn't there a command for this?
     - name: Generate local.properties file
       run: echo 'sdk.dir='$ANDROID_SDK_ROOT > android/local.properties
